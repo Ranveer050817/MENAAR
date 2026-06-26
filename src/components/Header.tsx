@@ -34,8 +34,9 @@ export function Header() {
     >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
-          <a href="#home" className="flex items-center">
-            <img src="/MENAAR.jpg" alt="Menaar Designs" className="h-12 md:h-14 w-auto object-contain" />
+          <a href="#home" className="flex flex-col justify-center">
+            <span className="text-2xl md:text-3xl font-serif font-bold text-[#C5A059] tracking-wider leading-none">MENAAR</span>
+            <span className={cn("text-[10px] uppercase tracking-[0.3em] font-sans mt-1", isScrolled ? "text-primary/60" : "text-white/60")}>designs</span>
           </a>
 
           {/* Desktop Nav */}

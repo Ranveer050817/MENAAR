@@ -3,9 +3,18 @@ import { Section, FadeIn } from './ui/Section';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
-const categories = ['All', 'Living Room', 'Bedroom', 'Kitchen', 'Office', 'Retail', 'Luxury Home'];
+type PortfolioItem = {
+  id: number;
+  category: string;
+  img: string;
+  title?: string;
+  location?: string;
+  description?: string;
+};
 
-const portfolio = [
+const categories = ['All', 'Living Room', 'Bedroom', 'Kitchen', 'Office', 'Retail', 'Luxury Home', 'Architecture', 'Exterior Design'];
+
+const portfolio: PortfolioItem[] = [
   { id: 1, category: 'Living Room', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800' },
   { id: 2, category: 'Bedroom', img: '/luxbed.jpg' },
   { id: 3, category: 'Kitchen', img: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&q=80&w=800' },
@@ -20,6 +29,14 @@ const portfolio = [
   { id: 12, category: 'Kitchen', img: '/kitchen.jpg' },
   { id: 13, category: 'Office', img: '/office.jpg' },
   { id: 14, category: 'Luxury Home', img: '/luxuryhome.jpg' },
+
+  // Architecture
+  { id: 15, category: 'Architecture', title: 'Modern Bungalow', location: 'Palm Springs, CA', description: 'A sleek, contemporary bungalow with open spaces and natural light.', img: '/bangalow.jpg' },
+  { id: 16, category: 'Architecture', title: 'Tech Hub Headquarters', location: 'Silicon Valley, CA', description: 'Innovative office complex designed for collaboration and sustainability.', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800' },
+
+  // Exterior Design
+  { id: 17, category: 'Exterior Design', title: 'Minimalist Frontage', location: 'Seattle, WA', description: 'Clean exterior lines with a striking mix of timber and concrete materials.', img: '/house.jpg' },
+  { id: 18, category: 'Exterior Design', title: 'Zen Garden Retreat', location: 'Kyoto, JP', description: 'Harmonious outdoor space with water features and native plantings.', img: '/home.jpg' },
 ];
 
 export function Portfolio() {
@@ -72,8 +89,11 @@ export function Portfolio() {
                   loading="lazy"
                   className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out rounded-xl"
                 />
-                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-xl">
+                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center rounded-xl">
                   <span className="text-white font-sans font-bold text-xs tracking-[0.2em] uppercase">{item.category}</span>
+                  {item.title && <h3 className="text-white text-lg md:text-xl font-serif italic mt-2 mb-1">{item.title}</h3>}
+                  {item.location && <p className="text-white/70 text-xs font-sans mb-3">{item.location}</p>}
+                  {item.description && <p className="text-white/80 text-sm font-sans font-light max-w-xs">{item.description}</p>}
                 </div>
               </motion.div>
             ))}

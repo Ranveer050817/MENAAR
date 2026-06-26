@@ -11,6 +11,7 @@ import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { WorkingDrawings } from './components/WorkingDrawings';
 import { Portfolio } from './components/Portfolio';
+import { Calculator } from './components/Calculator';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
@@ -34,6 +35,7 @@ export default function App() {
         <Process />
         <WorkingDrawings />
         <Portfolio />
+        <Calculator />
         <Testimonials />
         <FAQ />
         <Contact />

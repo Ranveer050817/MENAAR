@@ -41,7 +41,7 @@ export function About() {
                 </div>
                 <div className="glass p-6">
                   <h4 className="text-4xl font-light italic text-primary mb-2">
-                    5<span className="text-primary/40">+</span>
+                    7<span className="text-primary/40">+</span>
                   </h4>
                   <p className="text-[9px] text-primary/40 font-sans uppercase tracking-[0.2em]">Years Experience</p>
                 </div>
